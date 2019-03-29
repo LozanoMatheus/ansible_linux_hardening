@@ -1,0 +1,7 @@
+history_control: |
+  HISTCONTROL="ignoredups"
+  HISTFILESIZE=1000000
+  HISTSIZE=1000000
+  shopt -s histappend
+  HISTTIMEFORMAT='%F %T '
+  PROMPT_COMMAND='history -a'

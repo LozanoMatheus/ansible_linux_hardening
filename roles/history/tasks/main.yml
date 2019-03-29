@@ -1,0 +1,19 @@
+- name: Set up the bash history control
+  template:
+    src: history_control.j2
+    dest: /etc/history_control.conf
+    owner: root
+    group: wheel
+    mode: 0644
+
+- name: Source history control configure on /etc/profile
+  lineinfile:
+    path: /etc/profile
+    regexp: ".*/etc/history_control.conf*."
+    line: ". /etc/history_control.conf  ## Managed By Ansible - History Control"
+
+# - name: Source history control configure on /etc/profile
+#   blockinfile:
+#     path: /etc/profile
+#     marker: "## {mark} Managed By Ansible - History Control ##"
+#     block: "{{ history_control }}"

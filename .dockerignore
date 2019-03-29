@@ -1,0 +1,8 @@
+.git
+.dockerignore
+hosts
+tmp_*
+files/keys
+Dockerfile
+Dockerfile.test.yml
+README.md
